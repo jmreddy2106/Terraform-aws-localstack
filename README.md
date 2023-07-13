@@ -1,6 +1,9 @@
 # Terraform-aws-localstack
 This repo helps to establish a local environment to simulate Infrastructure as a Code (IaaC) on aws using LocalStack and Terraform. This repo successfully tested in `Ubuntu 18.04 LTS` and `python3.8`.
 
+![aws-infra-using-terraform-localstack](./images/1.jpeg)
+
+
 ### Install terraform in your local environment
 #### Linux/Ubuntu
 As per the [Terraform documentation](https://developer.hashicorp.com/terraform/downloads) 
