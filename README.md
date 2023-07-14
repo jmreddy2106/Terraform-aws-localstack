@@ -91,11 +91,12 @@ If you would like to remove the terraform plan, run
     - `aws --endpoint-url http://localhost:4566 ec2 describe-subnets`
 
 
-#### Multiple environments like dev and pre-prod/prod with different .tfvars. 
+### Multiple environments like dev and pre-prod/prod with different .tfvars. 
 
-Terraform has to generate multiple .tfstate files. To accomplish this by using terraform workspaces.
+Terraform has to generate multiple `.tfstate` files. To accomplish this by using terraform workspaces.
+- `terraform workspace list`
 - `terraform workspace show`
-
+ 
 To create different environments that creates `terraform.tfstate.d` folder 
 - `terraform workspace new dev`
 - `terraform workspace new prod`
@@ -104,5 +105,12 @@ To create different environments that creates `terraform.tfstate.d` folder
 To select an existing environment then run terraform command.
 - `terraform workspace select default`
 
+To run the `.tfvars` for dev/prod, run the below command. Terraform apply creates different `.tfstate` for dev and prod.
 
+- For Dev Environment:
+    - `terraform workspace select dev`
+    - `terraform apply -var-file=dev_env.tfvars`
 
+- For Prod Environment:
+    - `terraform workspace select prod` 
+    - `terraform apply -var-file=prod_env.tfvars`
