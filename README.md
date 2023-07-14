@@ -61,7 +61,7 @@ Test the installation of localstack on your local system
 Now let's install the Infrastructure as a Code (Iaac) using terraform.
 
 #### Test the terraform in your local
-- ```cd terraform-aws-localstack```
+- clone the repo and ```cd terraform-aws-localstack```
 
 **Step-1**: Run the `terraform init` command that downloads necessary packages specific service provider.
 - `terraform init`
@@ -89,4 +89,20 @@ If you would like to remove the terraform plan, run
     - `aws --endpoint-url http://localhost:4566 s3://raw-bucket-us-east-1 ls`
 - Check the subnets created by terraform 
     - `aws --endpoint-url http://localhost:4566 ec2 describe-subnets`
+
+
+#### Multiple environments like dev and pre-prod/prod with different .tfvars. 
+
+Terraform has to generate multiple .tfstate files. To accomplish this by using terraform workspaces.
+- `terraform workspace show`
+
+To create different environments that creates `terraform.tfstate.d` folder 
+- `terraform workspace new dev`
+- `terraform workspace new prod`
+- `terraform workspace list`
+
+To select an existing environment then run terraform command.
+- `terraform workspace select default`
+
+
 
