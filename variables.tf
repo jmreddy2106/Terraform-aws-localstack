@@ -12,3 +12,5 @@ variable public_subnet2_cidr {}
 variable public_subnet3_cidr {}
 variable aws_subnet_region {}
 variable aws_bucket_name {}
+variable vpc_name {}
+variable igw_name {}
