@@ -66,10 +66,10 @@ Now let's install the Infrastructure as a Code (Iaac) using terraform.
 **Step-1**: Run the `terraform init` command that downloads necessary packages specific service provider.
 - `terraform init`
 
-**Step-2**: Run `terraform plan` command that validates the terraform script and describes entire plan of infra that is going to create on aws cloud.   
+**Step-2**: Run `terraform plan` that validates the terraform script and describes entire plan of infra that is going to create on aws cloud.   
 - `terraform plan` 
 
-**Step-3**: Run `terraform apply` command that trying ot create your Infra on specific provider.
+**Step-3**: Run `terraform apply` that trying ot create your Infra of specific provider.
 - `terraform apply --auto-approve`
 
 If you add/modify any resources in your terraform then rerun the `Step-3` that only adds newly added service.
@@ -78,7 +78,7 @@ If you add/modify any resources in your terraform then rerun the `Step-3` that o
 Check the list terraform states created
 - `terraform state list`
 
-If you would like to remove the terraform plan, run
+To remove the terraform plan
 - `terraform destroy --auto-approve`
 
 #### Test the aws infra in localstack 
@@ -86,7 +86,7 @@ If you would like to remove the terraform plan, run
 - Check for list of s3 bucket(s)
     - `aws --endpoint-url http://localhost:4566 s3 ls`
 - Check for bucket has file is available or not. Assuming the bucket name: `raw-bucket-us-east-1`.
-    - `aws --endpoint-url http://localhost:4566 s3://raw-bucket-us-east-1 ls`
+    - `aws --endpoint-url http://localhost:4566 s3 ls s3://raw-bucket-us-east-1`
 - Check the subnets created by terraform 
     - `aws --endpoint-url http://localhost:4566 ec2 describe-subnets`
 
