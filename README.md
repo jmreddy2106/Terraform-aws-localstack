@@ -114,3 +114,7 @@ To run the `.tfvars` for dev/prod, run the below command. Terraform apply create
 - For Prod Environment:
     - `terraform workspace select prod` 
     - `terraform apply -var-file=prod_env.tfvars`
+
+- To delete workspaces:
+    - `terraform workspace delete dev`
+    - `terraform workspace delete prod`
