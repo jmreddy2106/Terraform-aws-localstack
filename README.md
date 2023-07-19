@@ -53,6 +53,7 @@ Test the installation of localstack on your local system
 
 - `docker images`
 - `docker ps`
+
 If the localstack is not shown in `docker ps`, run the below command
 - `docker run --rm -itd --name localstack-local -p 4566:4566 -p 4510-4559:4510-4559 localstack/localstack`
 - `docker ps`
